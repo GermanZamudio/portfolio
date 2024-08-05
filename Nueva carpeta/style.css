@@ -1,0 +1,9 @@
+body{
+    background: cadetblue;
+}
+.imagen{
+    width: 250px; /* Ajusta el tamaño según tus necesidades */
+    height: 250px; /* Mantén las proporciones cuadradas */
+    border-radius: 50%;
+    object-fit: cover;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <main>
+        <section class="general">
+            <div class="contenedor_1">
+                <nav id="nav-menu" class="nav-menu">
+                    <ul>
+                        <li><a href="#about">Acerca de</a></li>
+                        <li><a href="#skills">Habilidades</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>    
+            <div class="contenedor_2">
+                <header>
+                    <h1>German Zamudio</h1>
+                    <img src="{{ contacto.foto.url }}" alt="{{ contacto.nombre }}">
+                    
+                </header>
+            
+                <h2>Sobre Mí</h2>
+                <p>Hola, soy [Tu Nombre], un desarrollador apasionado por la tecnología y la programación. A continuación, te presento algunos de los proyectos en los que he trabajado.</p>
+                <h2>Proyectos</h2>
+                {% for proyecto in proyectos %}
+                    <div class="proyecto">
+                        <h3>{{ proyecto.titulo }}</h3>
+                        <img src="{{ proyecto.imagen.url }}" alt="{{ proyecto.titulo }}">
+                        <p>{{ proyecto.descripcion }}</p>
+                        <p><a href="{{ proyecto.enlace }}" target="_blank">Ver más</a></p>
+                    </div>
+                {% endfor %}
+
+            <section>
+                <h2>Habilidades</h2>
+                {% for habilidad in habilidades %}
+                    <div class="habilidad">
+                        <h3>{{ habilidad.titulo }}</h3>
+                        <p>Nivel: {{ habilidad.get_nivel_display }}</p>
+                        <p>Experiencia: {{ habilidad.tiempo_experiencia }}</p>
+                        <img src="{{ habilidad.logo.url }}" alt="{{ habilidad.titulo }}">
+                    </div>
+                {% endfor %}
+            </section>
+            <section>
+                <h2>Contacto</h2>
+                <p>Nombre: {{ contacto.nombre }}</p>
+                <p>Teléfono: {{ contacto.telefono }}</p>
+                <p>Email: {{ contacto.email }}</p>
+                <p>GitHub: <a href="{{ contacto.git }}" target="_blank">{{ contacto.git }}</a></p>
+                <p>LinkedIn: <a href="{{ contacto.linkedin }}" target="_blank">{{ contacto.linkedin }}</a></p>
+            </section>
+        </div> 
+        </section>   
+    </main>
+    <footer>
+        <p>&copy; 2024 [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
+    
+</body>
+</html>
