@@ -8,62 +8,68 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <main>
-        <section class="general">
-            <div class="contenedor_1">
-                <nav id="nav-menu" class="nav-menu">
-                    <ul>
-                        <li><a href="#about">Acerca de</a></li>
-                        <li><a href="#skills">Habilidades</a></li>
-                        <li><a href="#projects">Proyectos</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                    </ul>
-                </nav>
+    <div id="intro" class="intro">
+   
+        <div class="introinterno">
+            <h1> MI PORTAFOLIO </h1>
+        </div>
+    </div>
+    <section>
+        <div style="display: flex;flex-direction: column; justify-content: center; align-items: center;" >
+            <div>
+                <h1>GBZ</h1>
+            </div>
+            <br>
+            <div >
+                <img  class="imagen" src="{% static 'images/imagen-fotor-ai-art-effects-20240802192150.jpg' %}" alt="">
             </div>    
-            <div class="contenedor_2">
-                <header>
-                    <h1>German Zamudio</h1>
-                    <img src="{{ contacto.foto.url }}" alt="{{ contacto.nombre }}">
-                    
-                </header>
-            
-                <h2>Sobre Mí</h2>
-                <p>Hola, soy [Tu Nombre], un desarrollador apasionado por la tecnología y la programación. A continuación, te presento algunos de los proyectos en los que he trabajado.</p>
-                <h2>Proyectos</h2>
-                {% for proyecto in proyectos %}
-                    <div class="proyecto">
-                        <h3>{{ proyecto.titulo }}</h3>
-                        <img src="{{ proyecto.imagen.url }}" alt="{{ proyecto.titulo }}">
-                        <p>{{ proyecto.descripcion }}</p>
-                        <p><a href="{{ proyecto.enlace }}" target="_blank">Ver más</a></p>
-                    </div>
-                {% endfor %}
+        </div>
 
-            <section>
-                <h2>Habilidades</h2>
-                {% for habilidad in habilidades %}
-                    <div class="habilidad">
-                        <h3>{{ habilidad.titulo }}</h3>
-                        <p>Nivel: {{ habilidad.get_nivel_display }}</p>
-                        <p>Experiencia: {{ habilidad.tiempo_experiencia }}</p>
-                        <img src="{{ habilidad.logo.url }}" alt="{{ habilidad.titulo }}">
+        <div class="info">
+            <p>{{contacto.acercade}}</p>
+            
+                <div class="proyecto">
+                    <div class="contenedor">
+                        <h3>Gestion Depostio</h3>
+                        <p><a style="text-decoration: none;color: white;" href="{{ proyecto.enlace }}" target="_blank">Ver</a></p>
+                    </div>    
+                    <div class="contenedor2">
+                        Descripcion:
+                        <p>Realizada para prefectura</p>
+                        <h2>Tecnologias utilizadas</h2>
+                        <p>Python/Django</p>
+                        <p>MySql</p>
+                        <p>Html/Css/Js</p>            
                     </div>
-                {% endfor %}
-            </section>
-            <section>
-                <h2>Contacto</h2>
-                <p>Nombre: {{ contacto.nombre }}</p>
-                <p>Teléfono: {{ contacto.telefono }}</p>
-                <p>Email: {{ contacto.email }}</p>
-                <p>GitHub: <a href="{{ contacto.git }}" target="_blank">{{ contacto.git }}</a></p>
-                <p>LinkedIn: <a href="{{ contacto.linkedin }}" target="_blank">{{ contacto.linkedin }}</a></p>
-            </section>
-        </div> 
-        </section>   
-    </main>
+                </div>
+        
+        <section>
+            <h2>Contacto</h2>
+            <p>Teléfono:1155965703</p>
+            <p>Email: germanbenjamin@hotmail.com</p>
+            <p>GitHub: <a href="https://github.com/GermanZamudio" target="_blank">GitHub</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/german-zamudio-913500245/" target="_blank">Linkedin</a></p>
+        </section>
+    </div> 
+    </section>   
+
     <footer>
-        <p>&copy; 2024 [Tu Nombre]. Todos los derechos reservados.</p>
+        <p>&copy; 2024 GermanZamudio. Todos los derechos reservados.</p>
     </footer>
-    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const intro = document.getElementById('intro');
+            const content = document.getElementById('content');
+
+            intro.style.opacity = '0';
+            content.style.opacity = '1';
+
+            setTimeout(() => {
+                intro.style.display = 'none';
+            }, 500); // 500ms para la transición de opacidad
+        }, 1000); // 1 segundo para mostrar "PORTAFOLIO"
+    });
+    </script>
 </body>
 </html>

@@ -7,6 +7,12 @@
     <title>Demo</title>
 </head>
 <body>
+    <div id="intro" class="intro">
+   
+        <div class="introinterno">
+            <h1>PORTAFOLIO</h1>
+        </div>
+    </div>
     <section>
         <div style="display: flex;flex-direction: column; justify-content: center; align-items: center;" >
             <div>
@@ -18,11 +24,50 @@
             </div>    
         </div>
         <div>
+            <p>Hola, soy un desarrollador apasionado por la tecnología y la programación. A continuación, te presento el proyectos en el que trabajé.</p>
+            
+                <div class="proyecto">
+                    <div class="contenedor">
+                        <h3>Gestion Depostio</h3>
+                        <p><a style="text-decoration: none;color: white;" href="{{ proyecto.enlace }}" target="_blank">Ver</a></p>
+                    </div>    
+                    <div class="contenedor2">
+                        Descripcion:
+                        <p>Realizada para prefectura</p>
+                        <h2>Tecnologias utilizadas</h2>
+                        <p>Python/Django</p>
+                        <p>MySql</p>
+                        <p>Html/Css/Js</p>            
+                    </div>
+                </div>
+        
+        <section>
+            <h2>Contacto</h2>
+            <p>Teléfono:1155965703</p>
+            <p>Email: germanbenjamin@hotmail.com</p>
+            <p>GitHub: <a href="https://github.com/GermanZamudio" target="_blank">GitHub</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/german-zamudio-913500245/" target="_blank">Linkedin</a></p>
+        </section>
+    </div> 
+    </section>   
 
-        </div>
-        <div>
+    <footer>
+        <p>&copy; 2024 GermanZamudio. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+            const intro = document.getElementById('intro');
+            const content = document.getElementById('content');
 
-        </div>
-    </section>
+            intro.style.opacity = '0';
+            content.style.opacity = '1';
+
+            setTimeout(() => {
+                intro.style.display = 'none';
+            }, 500); // 500ms para la transición de opacidad
+        }, 1000); // 1 segundo para mostrar "PORTAFOLIO"
+    });
+    </script>
 </body>
 </html>

@@ -1,9 +1,86 @@
-body{
-    background: cadetblue;
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: black;
+}
+
+#intro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    background-color: #3b352d;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+.introinterno{
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+    display: flex;
+    justify-content: end;
+    width: 50%;
+    font-family:'Times New Roman', Times, serif;
+    color: #fff;
+    padding: 10px;
+}
+.introinterno h1{
+    margin: 2px;
+}
+#content {
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+section{
+    color:white
 }
 .imagen{
     width: 250px; /* Ajusta el tamaño según tus necesidades */
     height: 250px; /* Mantén las proporciones cuadradas */
     border-radius: 50%;
     object-fit: cover;
+}
+.proyecto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.3), /* Color del gradiente con opacidad */
+        rgba(0, 0, 0, 0.5) /* Color final del gradiente con opacidad */
+    ), url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlanlB0mVQkfoQZtNTK5XppNjtISsu_2Y5zEY5XXHj519WC8Y4Aad3eyMXJ8x1JaG9jGA&usqp=CAU");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: overlay; /* Mezcla el gradiente con la imagen */
+    color: white;
+    transition: transform 2s ease; 
+    cursor: pointer;
+    border-radius: 50%;
+    
+}
+.contenedor2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.contenedor:hover{
+    position: relative;
+    transform: scale(1.1); 
 }
