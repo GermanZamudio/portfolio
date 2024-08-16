@@ -3,35 +3,64 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
     background:#fdf9f9;
     color: #000000;
-    
+    scroll-behavior: smooth;
 }
+/*Nav*/
 
 .partedearriba{
     display: flex;
     flex-direction: column;
 }
-.nav{
+#navbar{
+    width: 100%;
+    margin: 0;
+    position: fixed; /* Fija el `nav` en una posición específica */
+    top: 0; /* Lo coloca en la parte superior de la página */
+    z-index: 1000; /* Asegura que el `nav` esté por encima de otros elementos */
+    background-color: black;
+    color: white;
+    transition: background-color 0.3s ease;
+    font-family: Courier New;
+    text-decoration: none;
+}
+
+#navbar.white-nav {
+    background-color: white;
+    color: black;
+
+}
+.nav_interno{
     display: flex;
     justify-content: space-between;
-    height: 20%;
-    background-color: antiquewhite;
 }
 .links{
     display: flex;
-    
     margin-right: 10%;
     justify-content: space-around;
     align-items: center;
-    width: 30%;
+    width: 50%;
 }
-
+.links2{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.opendiv{
+    display: none;
+}
+.links img{
+    display: none;
+}
 .links a{
-    color: #000000;
+    color:white;
     text-decoration: none;
-    
-    font-family: Courier New;
+}
+#navbar.white-nav a{
+    color: #000;
 }
 .logo{
     width: 200px;
@@ -46,12 +75,27 @@ body, html {
     font-size: 12px;
     font-family: Courier New;
 }
+#navbar.white-nav .logo{
+    border: 2px solid #000;
+    border-radius: 40px;
+}
+.github .linkedin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#navbar.white-nav .github{
+    background-color: #000;
+    border-radius: 100px;
+    padding: 2px;
+}
+/*Acerca de mi*/
 .presentacion{
     display: flex; 
     justify-content: space-around;
     align-items: center;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
+    font-size: 30px;
 
 }
 .acercade{
@@ -60,10 +104,9 @@ body, html {
     justify-content: start;
     flex-direction: column;
     width: 30%;
-    
 }
 .acercade h1{
-    font-size: 50px;
+    font-size: 60px;
     color: rgb(1, 1, 78);
 }
 #content {
@@ -75,11 +118,300 @@ body, html {
     display: flex;
     justify-content: center;
 }
+.contenedor_imagen2{
+    display: none;
+}
 .imagen{
     width:80%; /* Ajusta el tamaño según tus necesidades */
     height: 80%; /* Mantén las proporciones cuadradas */
     border-radius: 50%;
     object-fit: cover;
+}
+
+/*Proyecto*/
+
+.proyecto{
+    height: 100%;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.contenedor_proyecto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1100px;
+    background-color: #000000;
+}
+
+.despliegue{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.linkpagina{
+    position: relative; /* Necesario para el pseudo-elemento */
+    overflow: hidden;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+            
+}
+
+.linkpagina::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #f3f3f3;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+       
+.linkpagina:hover {
+    border-radius: 3px;
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+.linkpagina:hover::after {
+    transform: translateX(0);
+}
+
+.hidden{
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, height 0.5s ease;
+}
+.visible{
+    opacity: 1;
+    height: auto; /* Permite que el párrafo ajuste su altura automáticamente */
+    transition: opacity 0.5s ease, height 0.5s ease;
+}
+.titulo_proyecto{
+    height: 20%;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.tecnologias{
+    margin-top: 10px;
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.targetshabilidades{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logos{
+    margin: 10px;
+}
+.logos img{
+    width: 90px;
+    height: 80px;
+}
+.descripcion{
+    width: 80%;
+    display: flex;
+    justify-self: center;
+    text-align: center;
+}
+
+.divback{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.backimagen{
+    width: 100%;
+    height: 600px;
+    border-radius: 10px;
+    background-image: url("/static/images/background.png");
+    background-size: cover; /* Ajusta el tamaño de la imagen */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+
+/*Contacto*/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:#ffffff;
+    color: #000000;
+}
+.contacto{
+    display: flex;
+    width: 70%;
+    align-items: center;
+    justify-content: space-around;
+    font-family: Courier New;
+    font-size: 18px;
+}
+.git{
+    background-color: #000;
+    border-radius: 100px;
+    padding: 1px;
+}
+@media (max-width:1100px) {
+    #iconos_nav{
+        display: none;
+    }
+}
+@media (max-width:900px) {
+
+    .logo{
+        width: 150px;
+    }
+    .partedearriba{
+        width: 100%;
+        
+    }
+    .presentacion{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .contenedor_imagen2{
+        display: flex;
+        justify-content: center;
+    }
+    .contenedor_imagen{
+        display: none;  
+    }
+    .links img{ 
+        display: block;
+    }
+    #iconos_nav{
+        display: block;
+    }
+    .links{
+        opacity: 0;
+        visibility: hidden;
+    }
+    .links.visible{
+        opacity: 1;
+        visibility: visible;
+    }
+    .opendiv{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 20%;
+    }
+    .open{
+        display: flex;
+        justify-content:start;
+        align-items: center;
+    }
+    .closediv{
+        width: 80%;
+        height: 5%;
+        display: flex;
+        justify-content: end;
+        align-items: center; 
+        color: #ffffff;
+    }
+    .links{
+        position:absolute;
+        width: 200px;
+        height: 1200px;
+        top: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        background-color: #000;
+        box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+    }
+    .links2{
+        height: 50%;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: space-around;
+        font-size: 25px;
+    }
+    .proyecto{
+        
+        margin-top: 100px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .targetshabilidades{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .titulo_proyecto{
+        font-size: 20px;
+    }
+    .despliegue{
+        font-size: 20px;
+    }
+    .divback{
+        display: none;
+    }
+    .logos img{
+        width: 40px;
+        height: 30px;
+    }
+    footer .contacto{
+        flex-wrap: wrap;
+    }
+    #navbar.white-nav {
+        background-color:#ffffff;
+        color: rgb(0, 0, 0);
+    
+    }
+    #links.white-nav{
+        background-color: #ffffff;
+    }
+    .opendiv img , .closediv img{
+        background-color: #000;
+        border-radius: 10px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+@media (max-width:1600px) {
+
+    .proyecto{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+    .backimagen{
+        width: 90%;
+        height: 500px;
+    }
+
 }
 @media (max-width: 800px) {
     .acercade{
