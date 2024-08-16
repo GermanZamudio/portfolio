@@ -84,24 +84,24 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 #DATABASES = {
 #    'default':dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600),
 #}
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://dbportfolio_3oee_user:Lal5miyvLRzHY9Hu5T7IyTv8Zqn0eyvS@dpg-cqvc7fdsvqrc73c06ogg-a/dbportfolio_3oee',
-        conn_max_age=600
-    )
-}
+#DATABASES = {
+#    'default': dj_database_url.config(
+#        # Replace this value with your local database's connection string.
+#        default='postgresql://dbportfolio_3oee_user:Lal5miyvLRzHY9Hu5T7IyTv8Zqn0eyvS@dpg-cqvc7fdsvqrc73c06ogg-a/dbportfolio_3oee',
+#        conn_max_age=600
+#    )
+#}
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
