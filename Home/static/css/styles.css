@@ -357,7 +357,7 @@ footer{
         font-size: 25px;
     }
     .contenedor_proyecto{
-        height: 600px;
+        height:700px;
     }
     .proyecto{
         
@@ -403,6 +403,9 @@ footer{
         border-radius: 10px;
         padding-left: 5px;
         padding-right: 5px;
+    }
+    .tecnologias{
+        margin-bottom: 20px;
     }
 }
 @media (max-width:1600px) {
