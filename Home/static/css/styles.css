@@ -192,15 +192,7 @@ body, html {
 }
 
 .hidden{
-    opacity: 0;
-    height: 0;
-    overflow: hidden;
-    transition: opacity 0.5s ease, height 0.5s ease;
-}
-.visible{
-    opacity: 1;
-    height: auto; /* Permite que el párrafo ajuste su altura automáticamente */
-    transition: opacity 0.5s ease, height 0.5s ease;
+    font-size: 20px
 }
 .titulo_proyecto{
     height: 20%;
@@ -283,11 +275,13 @@ footer{
 }
 @media (max-width:900px) {
     .descripcion{
-        font-size: 5px;
+        font-size: 20px;
     }
 }
 @media (max-width:900px) {
-
+    .hidden{
+        font-size: 15px
+    }
     .logo{
         width: 150px;
     }
@@ -362,6 +356,9 @@ footer{
         justify-content: space-around;
         font-size: 25px;
     }
+    .contenedor_proyecto{
+        height: 600px;
+    }
     .proyecto{
         
         margin-top: 100px;
@@ -375,9 +372,11 @@ footer{
         flex-wrap: wrap;
     }
     .titulo_proyecto{
+        height: 60px;
         font-size: 20px;
     }
     .despliegue{
+        justify-content: start;
         font-size: 20px;
     }
     .divback{
@@ -398,6 +397,7 @@ footer{
     #links.white-nav{
         background-color: #ffffff;
     }
+
     .opendiv img , .closediv img{
         background-color: #000;
         border-radius: 10px;
